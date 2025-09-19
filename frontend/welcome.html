@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="Permissions-Policy" content="camera=(self)">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1a2a6c">
+    <title>马佛青AR项目 - 欢迎使用</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .qr-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+        }
+
+        .qrcode {
+            width: 200px;
+            height: 200px;
+            margin: 15px auto;
+            background: #fff;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            padding: 20px;
+        }
+
+        .start-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 20px 0;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .start-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .features {
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            width: 40px;
+        }
+
+        .instructions {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .qrcode {
+                width: 150px;
+                height: 150px;
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">📷</div>
+        <h1>马佛青AR项目</h1>
+        
+        <p>欢迎使用增强现实体验平台！扫描二维码或在手机上打开开始使用。</p>
+        
+        <div class="qr-section">
+            <h3>📱 手机扫描使用</h3>
+            <div class="qrcode" id="qrcode">📷</div>
+            <p>或用手机相机扫描二维码</p>
+        </div>
+
+        <button class="start-button" onclick="enterApp()">🚀 立即体验</button>
+
+        <div class="instructions">
+            <h3>使用说明：</h3>
+            <div class="feature">
+                <span class="feature-icon">📸</span>
+                <span>允许相机权限以使用AR功能</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🔍</span>
+                <span>扫描特定标记体验增强现实</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📱</span>
+                <span>建议在手机端获得最佳体验</span>
+            </div>
+        </div>
+
+        <div class="features">
+            <h3>功能特点：</h3>
+            <div class="feature">
+                <span class="feature-icon">🎯</span>
+                <span>精准的AR识别技术</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">✨</span>
+                <span>沉浸式视觉体验</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">⚡</span>
+                <span>快速响应的交互设计</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+    <script>
+        // 生成真实二维码
+        function generateRealQRCode() {
+            const currentUrl = window.location.href.replace('/welcome.html', '/index.html');
+            const qrCodeElement = document.getElementById('qrcode');
+            
+            QRCode.toCanvas(currentUrl, { 
+                width: 180,
+                height: 180,
+                margin: 1,
+                color: {
+                    dark: '#000000',
+                    light: '#ffffff'
+                }
+            }, function(err, canvas) {
+                if (err) {
+                    console.error(err);
+                    qrCodeElement.innerHTML = '📲';
+                    return;
+                }
+                qrCodeElement.innerHTML = '';
+                qrCodeElement.appendChild(canvas);
+            });
+        }
+
+        // 进入主应用
+        function enterApp() {
+            window.location.href = 'index.html';
+        }
+
+        // 检测设备类型
+        function detectDevice() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // 如果是手机设备，3秒后自动跳转
+                setTimeout(() => {
+                    enterApp();
+                }, 3000);
+            }
+        }
+
+        // 页面加载时执行
+        document.addEventListener('DOMContentLoaded', function() {
+            generateRealQRCode();
+            detectDevice();
+        });
+    </script>
+</body>
+</html>
