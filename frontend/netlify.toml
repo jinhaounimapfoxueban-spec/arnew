@@ -1,0 +1,26 @@
+[build]
+  publish = "frontend"
+  command = "echo 'Netlify build completed'"
+
+[[redirects]]
+  from = "/"
+  to = "/welcome.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "camera=self"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
+
+[build.environment]
+  NODE_VERSION = "18"
